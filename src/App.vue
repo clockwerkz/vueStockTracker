@@ -1,28 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Stocks v-bind:stocks="stocks"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Stocks from './components/Stocks';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Stocks
+  },
+  data() {
+    return {
+      stocks: [
+        {
+          id: 1,
+          symbol: 'ATVI',
+          currentPrice: 45
+        },
+        {
+          id: 2,
+          symbol: 'DIS',
+          currentPrice: 110
+        },
+        {
+          id: 1,
+          symbol: 'MSFT',
+          currentPrice: 161
+        },
+      ]
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+  }
+
 </style>
